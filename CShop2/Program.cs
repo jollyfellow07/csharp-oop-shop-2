@@ -3,26 +3,17 @@ using CShop2;
 
 Prodotto mela = new Prodotto("MELA", "questa mela è rossa", 0.50, 5);
 int codice = mela.GetCodice();
-mela.stampa();
+Console.WriteLine(mela.ToString());
 
-Prodotto telefono = new Prodotto("iphone", "Apple iPhone 13 è l’ultima uscita di casa Apple, apparentemente simile al suo predecessore, ma in realtà molto innovativo per display, batteria e fotocamera. ", 1000, 22);
-int iphoneCodice = telefono.GetCodice();
-telefono.stampa();
-
-Prodotto medicina = new Prodotto("tachipirina", "serve per la febbre", 10.20, 10);
-int medicinaCodice = medicina.GetCodice();
-medicina.stampa();
-
-Prodotto sedia = new Prodotto("Sedia", "di legno", 50, 22);
-int sediaCodice = sedia.GetCodice();
-sedia.stampa();
 
 Acqua sorgesana = new Acqua("acqua", "sorgesana", 0.5, 22, 7, "Monte Terminio");
-sorgesana.stampa();
+
 sorgesana.NomeEsteso();
 sorgesana.BeviAcqua();
 Acqua.ConvertiInGalloni();
 
 Frutta arancie = new Frutta();
 arancie.ComposizioneSacchetto();
+Elettrodomestico lavatrice = new Elettrodomestico("LAVATRICE", " bianca", 100, 22, "A", 34.6, 50, 20);
+Console.WriteLine(lavatrice.ToString());
 

@@ -8,11 +8,11 @@ namespace CShop2
 {
     internal class Prodotto
     {
-        private int codice;
+        public int codice;
         public string nome;
-        private string descrizione;
-        private double prezzo;
-        private double iva;
+        public string descrizione;
+        public double prezzo;
+        public double iva;
 
         public Prodotto()
         {
@@ -46,17 +46,19 @@ namespace CShop2
         }
 
         /*STAMPA TUTTE LE CARATTERISTICHE DEL MIO PRODOTTO*/
-        public void stampa()
+        public override string ToString()
         {
+            string rappresentazioneInStringa = "";
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-            Console.WriteLine("\n**************PRODOTTO***************");
-            Console.WriteLine("Il nome del prodotto è: " + nome);
-            Console.WriteLine("La descrizione del mio prodotto: " + descrizione);
-            Console.WriteLine("il codice è: " + padleft());
-            Console.WriteLine("il prezzo senza iva è: " + prezzo + "€");
-            Console.WriteLine("L'iva del prodotto è: " + iva + "%");
-            Console.WriteLine("Il prezzo del prodotto con iva è: " + CalcoloPrezzoConIva() + "€");
-            Console.WriteLine("**************************************");
+            rappresentazioneInStringa += "\n**************PRODOTTO***************\n";
+            rappresentazioneInStringa += "Il nome del prodotto è: " + this.nome + "\n";
+            rappresentazioneInStringa += "La descrizione del mio prodotto: " + this.descrizione + "\n";
+            rappresentazioneInStringa += "il codice è: " + padleft() + "\n";
+            rappresentazioneInStringa += "il prezzo senza iva è: " + this.prezzo + "€" + "\n";
+            rappresentazioneInStringa += "L'iva del prodotto è: " + this.iva + "%" + "\n";
+            rappresentazioneInStringa += "Il prezzo del prodotto con iva è: " + CalcoloPrezzoConIva() + "€" + "\n";
+            rappresentazioneInStringa += "**************************************" + "\n";
+            return rappresentazioneInStringa;
         }
 
         /*Metodo che stampa codice e nome*/
