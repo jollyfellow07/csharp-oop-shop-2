@@ -9,15 +9,15 @@ namespace CShop2
     internal class Prodotto
     {
         private int codice;
-        private string name;
+        public string nome;
         private string descrizione;
         private double prezzo;
         private double iva;
 
-        public Prodotto(string name, string descrizione, double prezzo, double iva)
+        public Prodotto(string nome, string descrizione, double prezzo, double iva)
         {
 
-            this.name = name;
+            this.nome = nome;
             this.descrizione = descrizione;
             this.prezzo = prezzo;
             this.iva = iva;
@@ -33,7 +33,7 @@ namespace CShop2
         }
 
         /*bonus*/
-        public string padleft()
+        public virtual string padleft()
         {
 
             string strvalue = Convert.ToString(codice).PadLeft(8, '0');
@@ -45,7 +45,7 @@ namespace CShop2
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.WriteLine("\n**************PRODOTTO***************");
-            Console.WriteLine("Il nome del prodotto è: " + name);
+            Console.WriteLine("Il nome del prodotto è: " + nome);
             Console.WriteLine("La descrizione del mio prodotto: " + descrizione);
             Console.WriteLine("il codice è: " + padleft());
             Console.WriteLine("il prezzo senza iva è: " + prezzo + "€");
@@ -54,6 +54,11 @@ namespace CShop2
             Console.WriteLine("**************************************");
         }
 
+        /*Metodo che stampa codice e nome*/
+        public virtual void NomeEsteso()
+        {
+            Console.Write(padleft() + " - " + nome);
+        }
         /*METODO: PER CALCOLARE IL PREZZO CALCOLATO CON IVA*/
 
         public double CalcoloPrezzoConIva()

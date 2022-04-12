@@ -9,11 +9,16 @@ namespace CShop2
     internal class Acqua : Prodotto
     {
         private static double litri = 1.5;
-        public static readonly double ph;
-        public static readonly string sorgente;
+        private double ph;
+        private string sorgente;
 
-        public Acqua(string name, string descrizione, double prezzo, double iva) : base(name, descrizione, prezzo, iva)
+
+        public Acqua(string nome, string descrizione, double prezzo, double iva, double ph, string sorgente) : base(nome, descrizione, prezzo, iva)
         {
+            
+            this.ph = ph;
+            this.sorgente = sorgente;
+
         }
        
 
@@ -64,6 +69,30 @@ namespace CShop2
             return litri;
         }
 
+        public override void NomeEsteso()
+        {
+            base.NomeEsteso();
+            Console.WriteLine (" - " +this.ph + " - " + this.sorgente  ) ;
+        }
+
+        public static void ConvertiInGalloni()
+        {
+            double gallone = 3.785;
+            double litriToGallone = 0;
+
+            if (litri > 0)
+            {
+                litriToGallone = gallone * litri;
+                Console.WriteLine("i tuoi litri (" + litri + ")  in galloni sono: " + litriToGallone);
+            }
+            
+            else
+            {
+                litriToGallone = litriToGallone / litri;
+
+                Console.WriteLine("i tuoi litri (" + litri + ") in galloni sono: " + litriToGallone);
+            }
+        }
 
 
 
