@@ -36,7 +36,9 @@ namespace CShop2
             }
             else
             {
-                Console.WriteLine("Mi dispiace la bottiglia non dispone di tutta quest'acqua");
+                Console.WriteLine("Mi dispiace la bottiglia non dispone di tutta quest'acqua, bevendo hai finito tutta l'acqua.");
+                litri = 0;
+                Console.WriteLine("i litri ora sono " + litri);
             }
             litri = Math.Round(litri, 1);
             return litri;
