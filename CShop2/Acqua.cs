@@ -23,7 +23,9 @@ namespace CShop2
             double bere = double.Parse(Console.ReadLine());
             if (bere <= litri)
             {
+                
                 litri = litri - bere;
+                litri = Math.Round(litri, 1);
                 Console.WriteLine("hai bevuto " + bere + " litri e ti restano " + litri);
 
             }
@@ -31,6 +33,7 @@ namespace CShop2
             {
                 Console.WriteLine("Mi dispiace la bottiglia non dispone di tutta quest'acqua");
             }
+            litri = Math.Round(litri, 1);
             return litri;
         }
 
@@ -48,12 +51,18 @@ namespace CShop2
             }
             else
             {
+                litri = Math.Round(litri, 1);
                 Console.WriteLine("I litri disponibili ora sono:  " + litri);
             }
-            
+            litri = Math.Round(litri, 1);
             return litri;
         }
 
+        public double SvuotaAcqua()
+        {
+            litri = 0;
+            return litri;
+        }
 
 
 
