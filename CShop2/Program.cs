@@ -20,3 +20,4 @@ sedia.stampa();
 Acqua sorgesana = new Acqua("acqua", "sorgesana", 0.5, 22);
 sorgesana.BeviAcqua();
 sorgesana.BeviAcqua();
+sorgesana.AggiungiAcqua();
