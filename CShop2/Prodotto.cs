@@ -14,6 +14,11 @@ namespace CShop2
         private double prezzo;
         private double iva;
 
+        public Prodotto()
+        {
+
+        }
+
         public Prodotto(string nome, string descrizione, double prezzo, double iva)
         {
 

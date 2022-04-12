@@ -22,3 +22,7 @@ sorgesana.stampa();
 sorgesana.NomeEsteso();
 sorgesana.BeviAcqua();
 Acqua.ConvertiInGalloni();
+
+Frutta arancie = new Frutta();
+arancie.ComposizioneSacchetto();
+
