@@ -1,16 +1,16 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CShop2;
 
-Prodotto mela = new Prodotto("MELA", "questa mela è rossa", 0.50, 5);
+Prodotto mela = new Prodotto("MELA", "questa mela è rossa", 0.20, 5);
 int codice = mela.GetCodice();
 Console.WriteLine(mela.ToString());
 
 
-Acqua sorgesana = new Acqua("acqua", "sorgesana", 0.5, 22, 7, "Monte Terminio");
+Acqua sorgesana = new Acqua("acqua", "sorgesana", 0.22, 22, 7, "Monte Terminio");
 sorgesana.NomeEsteso();
 sorgesana.BeviAcqua();
 Acqua.ConvertiInGalloni();
-
+Console.WriteLine(sorgesana.ToString());
 
 Frutta arancie = new Frutta();
 arancie.ComposizioneSacchetto();

@@ -21,6 +21,14 @@ namespace CShop2
 
         }
        
+        public string GetSorgente()
+        {
+            return sorgente;
+        }
+        public double GetPH()
+        {
+            return ph;
+        }
 
         public double BeviAcqua()
         {
@@ -96,8 +104,23 @@ namespace CShop2
             }
         }
 
-
-
+        public override string ToString()
+        {
+            string rappresentazioneInStringa = "";
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            rappresentazioneInStringa += "\n**************PRODOTTO***************\n";
+            rappresentazioneInStringa += "Il nome del prodotto è: " + this.nome + "\n";
+            rappresentazioneInStringa += "La descrizione del mio prodotto: " + base.descrizione + "\n";
+            rappresentazioneInStringa += "il codice è: " + padleft() + "\n";
+            rappresentazioneInStringa += "il prezzo senza iva è: " + base.prezzo + "€" + "\n";
+            rappresentazioneInStringa += "L'iva del prodotto è: " + base.iva + "%" + "\n";
+            rappresentazioneInStringa += "Il prezzo del prodotto con iva è: " + CalcoloPrezzoConIva() + "€" + "\n";
+            rappresentazioneInStringa += "il PH di quest'acqua è :  " + this.ph + "\n";
+            rappresentazioneInStringa += "La sorgente di quest'acqua è: " + this.sorgente + "\n";
+            rappresentazioneInStringa += "i litri attualmente contenuti sono:  " + litri + "\n";
+            rappresentazioneInStringa += "**************************************" + "\n";
+            return rappresentazioneInStringa;
+        }
 
     }
 }
