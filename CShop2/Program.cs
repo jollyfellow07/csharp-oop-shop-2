@@ -6,7 +6,7 @@ int codice = mela.GetCodice();
 Console.WriteLine(mela.ToString());
 
 
-Acqua sorgesana = new Acqua("acqua", "sorgesana", 0.22, 22, 7, "Monte Terminio");
+Acqua sorgesana = new Acqua("acqua", "sorgesana", 0.22, 5, 7, "Monte Terminio");
 sorgesana.NomeEsteso();
 sorgesana.BeviAcqua();
 Acqua.ConvertiInGalloni();

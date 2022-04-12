@@ -81,9 +81,14 @@ namespace CShop2
                 prezzoFinale = prezzo * 1.05;
 
             }
-            else
+            else if ( iva == 10)
             {
                 prezzoFinale = prezzo * 1.10;
+            }
+            else
+            {
+                Console.WriteLine("controlla di aver inserito un iva valida");
+                prezzoFinale = prezzo * 0;
             }
             prezzoFinale = Math.Round(prezzoFinale, 2);
             return prezzoFinale;

@@ -17,7 +17,7 @@ namespace CShop2
         //METODO PER COMPORRE IL MIO SACCHETTO DI FRUTTA CON MASSIMO 5 PRODOTTI
         public void ComposizioneSacchetto()
         {
-            Console.WriteLine("\nQuanti pezzi di frutta vuoi comprare?");
+            Console.WriteLine("\nQuanti frutti vuoi comprare? [il sacchetto può contenere massimo 5 frutti]");
             int pezziDaAcquistare;
             do
             {
@@ -28,10 +28,11 @@ namespace CShop2
 
             for(int i = 0; i < pezziDaAcquistare; i++)
             {
-                Console.WriteLine("inserisci il pezzo di frutta numero " + (i + 1) + " di " + pezziDaAcquistare +  " da acquistare");
+                Console.WriteLine("inserisci la frutta numero " + (i + 1) + " di " + pezziDaAcquistare +  " da acquistare e inserire nel sacchetto");
                 pezziFrutta[i]=Console.ReadLine();
 
             }
+            Console.WriteLine("Il tuo sacchetto contiene questi frutti: ");
             //Stampa del mio array
             Console.Write("[");
             for (int i = 0; i < pezziFrutta.Length; i++)
