@@ -17,3 +17,6 @@ Prodotto sedia = new Prodotto("Sedia", "di legno", 50, 22);
 int sediaCodice = sedia.GetCodice();
 sedia.stampa();
 
+Acqua sorgesana = new Acqua("acqua", "sorgesana", 0.5, 22);
+sorgesana.BeviAcqua();
+sorgesana.BeviAcqua();
