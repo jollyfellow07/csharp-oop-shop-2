@@ -18,20 +18,24 @@ namespace CShop2
         public void ComposizioneSacchetto()
         {
             Console.WriteLine("\nQuanti frutti vuoi comprare? [il sacchetto può contenere massimo 5 frutti]");
-            int pezziDaAcquistare;
+            int pezziDaAcquistare = 0;
+
             do
             {
                 Console.WriteLine("Inserisci un numero da 0 a 5");
                 pezziDaAcquistare = int.Parse(Console.ReadLine());
 
-            } while (pezziDaAcquistare > 5 && pezziDaAcquistare <= 0);
+            } while (pezziDaAcquistare < 6 && pezziDaAcquistare >= 0);
 
-            for(int i = 0; i < pezziDaAcquistare; i++)
+            if(pezziDaAcquistare < 6 && pezziDaAcquistare >= 0)
+            { 
+            for (int i = 0; i < pezziDaAcquistare; i++)
             {
                 Console.WriteLine("inserisci la frutta numero " + (i + 1) + " di " + pezziDaAcquistare +  " da acquistare e inserire nel sacchetto");
                 pezziFrutta[i]=Console.ReadLine();
 
             }
+            
             Console.WriteLine("Il tuo sacchetto contiene questi frutti: ");
             //Stampa del mio array
             Console.Write("[");
@@ -44,6 +48,11 @@ namespace CShop2
                 }
             }
             Console.Write("]");
+        }else 
+        {
+                Console.WriteLine("mi dispiace ma il tuo sacchetto non puo contenere questi elementi");
+
+            }
         }
     }
 }
