@@ -9,8 +9,8 @@ namespace CShop2
     internal class Acqua : Prodotto
     {
         private static double litri = 1.5;
-        private double ph;
-        private string sorgente;
+        private readonly double ph;
+        private readonly string sorgente;
 
 
         public Acqua(string nome, string descrizione, double prezzo, double iva, double ph, string sorgente) : base(nome, descrizione, prezzo, iva)
@@ -93,13 +93,14 @@ namespace CShop2
             if (litri > 0)
             {
                 litriToGallone = gallone * litri;
+                litriToGallone = Math.Round(litriToGallone, 3);
                 Console.WriteLine("i tuoi litri (" + litri + ")  in galloni sono: " + litriToGallone);
             }
             
             else
             {
                 litriToGallone = litriToGallone / litri;
-
+                litriToGallone = Math.Round(litriToGallone, 3);
                 Console.WriteLine("i tuoi litri (" + litri + ") in galloni sono: " + litriToGallone);
             }
         }

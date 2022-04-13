@@ -8,7 +8,7 @@ namespace CShop2
 {
     internal class CiboInScatola : Prodotto
     {
-        private static string materiale=("Alluminio");
+        private readonly string materiale=("Alluminio");
         private static double caricoMaxContenitore = 300;
         private static double caricoAttualeContenitore = 0;
         private string cibo;
