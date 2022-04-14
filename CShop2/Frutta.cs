@@ -51,7 +51,7 @@ namespace CShop2
                     Console.Write(", ");
                 }
             }
-            Console.Write("]");
+            Console.Write("]\n");
             
         }
     }

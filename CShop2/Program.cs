@@ -1,11 +1,25 @@
 ﻿
 using CShop2;
 
-Prodotto mela = new Prodotto("MELA", "questa mela è rossa", 0.20, 5);
-int codice = mela.GetCodice();
-Console.WriteLine(mela.ToString());
 
-/**********************************************************************************************************************/
+/*
+ * IVE ACCETTATE:
+ * 5% PER LA FRUTTA E L'ACQUA
+ * 22% PER I PRODOTTI GENERICI E GLI ELETTRODOMESICI
+ * 10% PER il CIBO IN SCATOLA
+ * 
+/********************************************** PRODOTTO GENERICO ************************************************************************/
+
+
+Prodotto tavolo = new Prodotto("Tavolo", "questa mela è rossa", 28, 22);
+int codice = tavolo.GetCodice();
+Console.WriteLine(tavolo.ToString());
+
+
+
+
+
+/********************************************** ACQUA ************************************************************************/
 
 Acqua sorgesana = new Acqua("Sorgesana", "Acqua naturale povera di sodio", 15, 5, 6.8, "Monte Terminio");
 
@@ -39,7 +53,7 @@ Acqua.ConvertiInGalloni();
 }
 Console.WriteLine(sorgesana.ToString());
 
-/**********************************************************************************************************************/
+/********************************************* FRUTTIVENDOLO *************************************************************************/
 
 Frutta arancie = new Frutta();
 try
@@ -56,20 +70,31 @@ try
     Console.WriteLine(e.Message);
 }
 
-/**********************************************************************************************************************/
+/********************************************  ELETTRODOMESICO  **************************************************************************/
+
+
 
 Elettrodomestico lavatrice = new Elettrodomestico("LAVATRICE", " bianca", 100, 22, "A", 34.6, 50, 20);
+lavatrice.PremiPulsanteOnOff();
 Console.WriteLine(lavatrice.ToString());
+lavatrice.PremiPulsanteOnOff();
 
-/**********************************************************************************************************************/
+
+
+/***********************************************  CIBO IN SCATOLA  ***********************************************************************/
+
 
 CiboInScatola fagioli = new CiboInScatola("Bellotti", "Legumi pieni di sostanze nutrienti", 3, 22, "fagioli");
-try {
-fagioli.AggiungiCibo();
-}catch(ArgumentOutOfRangeException ex)
+
+Console.WriteLine(fagioli.ToString());
+
+try 
+{
+   fagioli.AggiungiCibo();
+}
+catch(ArgumentOutOfRangeException ex)
 {
     Console.WriteLine("il parametro " + ex.ParamName + " ha detto: " + ex.Message);
 }
-
-Console.WriteLine(fagioli.ToString());
+fagioli.GetGrammiAttuali();
 

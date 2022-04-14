@@ -12,7 +12,7 @@ namespace CShop2
         private double larghezza;
         private double altezza;
         private double profondita;
-
+        private bool corrente = false;
         public Elettrodomestico (string nome, string descrizione, double prezzo, double iva, string classe, double larghezza, double altezza, double profondita) : base(nome, descrizione, prezzo, iva)
         {
             this.classe= classe;
@@ -25,7 +25,20 @@ namespace CShop2
         {
             return this.classe;
         }
+        
+        public void PremiPulsanteOnOff()
+        {
+            if(corrente == false)
+            {
+            corrente = true;
+                Console.WriteLine("bzzzzz... " + nome + " si è acceso/a");
+            }
+            else
+            {
+                Console.WriteLine("poooooffff... " + nome + " si è spento/a");
+            }
 
+        }
         public override string ToString()
         {
             string rappresentazioneInStringa = "";

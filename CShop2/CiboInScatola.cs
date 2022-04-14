@@ -17,6 +17,10 @@ namespace CShop2
         { 
         this.cibo=cibo;
         }
+        public double GetGrammiAttuali()
+        {
+            return caricoAttualeContenitore;
+        }
         public string GetCibo()
         {
             return cibo;
@@ -68,7 +72,6 @@ namespace CShop2
             rappresentazioneInStringa += "L'iva del prodotto è: " + base.iva + "%" + "\n";
             rappresentazioneInStringa += "Il prezzo del prodotto con iva è: " + CalcoloPrezzoConIva() + "€" + "\n";
             rappresentazioneInStringa += "il cibo inserito in questa scatola è :  " + this.cibo + "\n";
-            rappresentazioneInStringa += "i grammi all' interno della scatola sono: " + caricoAttualeContenitore + "grammi " + "\n";
             rappresentazioneInStringa += "il materiale del contenitore è:  " + materiale + "\n";
             rappresentazioneInStringa += "**************************************" + "\n";
             return rappresentazioneInStringa;
