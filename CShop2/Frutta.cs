@@ -18,12 +18,19 @@ namespace CShop2
         public void ComposizioneSacchetto()
         {
             Console.WriteLine("\nQuanti frutti vuoi comprare? [il sacchetto può contenere massimo 5 frutti]");
-            int pezziDaAcquistare = 0;
+            int pezziDaAcquistare = -1;
 
             do
             {
                 Console.WriteLine("Inserisci un numero da 0 a 5");
-                pezziDaAcquistare = int.Parse(Console.ReadLine());
+                try
+                {
+                    pezziDaAcquistare = int.Parse(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Non hai inserito un input corretto!");
+                }
             } while (pezziDaAcquistare > 5 || pezziDaAcquistare < 0);
 
             for (int i = 0; i < pezziDaAcquistare; i++)

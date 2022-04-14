@@ -33,14 +33,25 @@ namespace CShop2
         public double BeviAcqua()
         {
             Console.Write("Quanti litri vuoi bere? ");
-            double bere = double.Parse(Console.ReadLine());
-            if (bere <= litri)
+            double bere = 0;
+            try
+            {
+                bere = double.Parse(Console.ReadLine());
+            } catch (Exception)
+            {
+                Console.WriteLine("Non hai inserito un input corretto.");
+            }
+
+            if (bere <= litri && bere>=0)
             {
                 
                 litri = litri - bere;
                 litri = Math.Round(litri, 1);
                 Console.WriteLine("hai bevuto " + bere + " litri e ti restano " + litri);
 
+            }else if( bere < 0)
+            {
+                throw new ArgumentOutOfRangeException("bere", "il suo valore è negativo");
             }
             else
             {
@@ -48,20 +59,34 @@ namespace CShop2
                 litri = 0;
                 Console.WriteLine("i litri ora sono " + litri);
             }
+            
             litri = Math.Round(litri, 1);
+            
             return litri;
         }
 
         public double AggiungiAcqua()
         {
             Console.Write("Di quanti litri vuoi riempire la bottiglia?  ");
-            double aggiungi = double.Parse(Console.ReadLine());
-            
+            double aggiungi = 0;
+            try
+            {
+                 aggiungi = double.Parse(Console.ReadLine());
+            }
+            catch(Exception)
+            {
+                Console.WriteLine("Non hai inserito un input corretto!");
+            }
+            if (aggiungi < 0)
+            {
+             throw new ArgumentOutOfRangeException("aggiungi", "hai inserito un input negativo");
+            }
+            else { 
             litri = litri + aggiungi;
             if(litri > 1.5)
             {
                 litri = 1.5;
-                Console.WriteLine("Mi dispiace hai fatto un strabocco");
+                Console.WriteLine("Mi dispiace hai fatto uno strabocco");
                 Console.WriteLine("la quantita di acqua disponibile nella bottiglia è " + litri);
             }
             else
@@ -69,13 +94,23 @@ namespace CShop2
                 litri = Math.Round(litri, 1);
                 Console.WriteLine("I litri disponibili ora sono:  " + litri);
             }
+            }
             litri = Math.Round(litri, 1);
             return litri;
         }
 
         public double SvuotaAcqua()
         {
-            litri = 0;
+            if (litri > 0)
+            {
+                litri = 0;
+                Console.WriteLine("Hai svuotato la bottiglia!");
+                Console.ReadKey();
+            }
+            else
+            { 
+                Console.WriteLine("La tua bottiglia già è vuota! ");
+            }
             return litri;
         }
 
@@ -99,9 +134,7 @@ namespace CShop2
             
             else
             {
-                litriToGallone = litriToGallone / litri;
-                litriToGallone = Math.Round(litriToGallone, 3);
-                Console.WriteLine("i tuoi litri (" + litri + ") in galloni sono: " + litriToGallone);
+                throw new ArgumentOutOfRangeException("Litri", " Mi dispiace ma non posso calcolare i galloni se i litri sono 0!");
             }
         }
 
